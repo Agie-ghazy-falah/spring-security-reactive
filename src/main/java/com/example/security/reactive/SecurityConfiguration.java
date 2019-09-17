@@ -37,6 +37,7 @@ public class SecurityConfiguration {
                 .and()
                 .authorizeExchange()
                 .pathMatchers(AUTH_WHITELIST).access((auth, context) -> {
+                	//Run custom auth validation here
                 	String authKey = getHeader("Auth", context);
                 	boolean isAuthenticate = (authKey != null);
                 	return Mono.just(new AuthorizationDecision(isAuthenticate));
