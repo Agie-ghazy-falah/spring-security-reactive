@@ -19,6 +19,8 @@ import reactor.core.publisher.Mono;
 
 @Component
 public class EntryPoint implements ServerAuthenticationEntryPoint {
+	
+	//This method is used to override API response when security is failed 
     @Override
     public Mono<Void> commence(ServerWebExchange exchange, AuthenticationException e) {
     	System.out.println("Run entry point");

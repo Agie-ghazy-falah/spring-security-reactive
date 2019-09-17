@@ -22,6 +22,7 @@ public class SecurityConfiguration {
             "/product/**"
     };
     
+    //Base spring security config, everything stats here
 	@Bean
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http, EntryPoint entryPoint) {
 		System.out.println("Run security filter");
